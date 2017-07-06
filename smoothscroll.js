@@ -36,3 +36,20 @@ jQuery('a[href^="#"]').on('click', function(event) {
 		    }, 500);
 		});
 
+
+
+//smooth scrolling
+
+    $('a[href*="#"]:not([href="#"])').click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            var hd = $('.head').height();
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top - hd
+                }, 1000);
+                return false;
+            }
+        }
+    });
