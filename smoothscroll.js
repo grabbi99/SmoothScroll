@@ -53,3 +53,8 @@ jQuery('a[href^="#"]').on('click', function(event) {
             }
         }
     });
+
+// Slick nav menu mobile
+        $('.slicknav_nav a').on('click', function () {
+            $(".slicknav_nav").slideUp()
+        });	
