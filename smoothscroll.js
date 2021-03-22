@@ -58,3 +58,15 @@ jQuery('a[href^="#"]').on('click', function(event) {
         $('.slicknav_nav a').on('click', function () {
             $(".slicknav_nav").slideUp()
         });	
+
+
+// Toggle Read more
+$('.read-more').on('click', function (e) {
+	e.preventDefault();
+	$(this).parent('.we-service-content').find('.long-text').slideToggle();
+	if (this.innerHTML === "+ Read More") {
+		this.innerHTML = "- Show Less";
+	} else {
+		this.innerHTML = "+ Read More";
+	}
+});
